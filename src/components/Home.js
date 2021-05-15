@@ -17,7 +17,7 @@ const Home = (props) => {
 
     const handleStatus = () => {
         if (props.loggedInStatus){
-            <Link to="/logout" onClick={this.handleClick}>Log Out</Link>
+            <Link to="/logout" onClick={handleClick}>Log Out</Link>
         } else {
             return null
         }
