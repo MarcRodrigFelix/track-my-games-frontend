@@ -17,6 +17,13 @@ class App extends Component {
     this.handleLoginStatus()
   }
 
+  handleLogin = (data) => {
+    this.setState({
+      isLoggedIn: true,
+      user: data.user
+    })
+  }
+
   handleLoginStatus = () => {
     axios.post('http://localhost:3000/logged_in', {
       withCredentials: true
