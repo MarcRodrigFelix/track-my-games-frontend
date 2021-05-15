@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Home = (props) => {
 
+    // axios/fetch for logout from backend
     const handleClick = () => {
         axios.delete('http://localhost:3000/logout', {
             withCredentials: true
@@ -15,14 +16,6 @@ const Home = (props) => {
         .catch( error => console.log(error) )
     }
 
-    const handleStatus = () => {
-        if (props.loggedInStatus){
-            <Link to="/logout" onClick={handleClick}>Log Out</Link>
-        } else {
-            return null
-        }
-    }
-
     return (
         <div>
             <div>
@@ -31,7 +24,8 @@ const Home = (props) => {
                 <Link to="/signup">Sign Up</Link>
             </div>
             <div>
-                { handleStatus }
+                {/* if looged in, show Log out link for user */}
+                { props.loggedInStatus ? <Link to="/logout" onClick={handleClick}>Log Out</Link> : null  }
             </div>
         </div>
         

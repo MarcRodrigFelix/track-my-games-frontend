@@ -51,6 +51,7 @@ class Signup extends Component {
   render() {
     return (
       <div>
+        <h1>Sign Up</h1>
         <form onSubmit={this.handleOnSubmit}>
           <input 
             type="text" 
@@ -80,7 +81,9 @@ class Signup extends Component {
             onChange={this.handleOnChange}
             placeholder="Confirm Password"
           /><br />
-          <input type="submit" />
+          <button type="submit">
+            Sign Up
+          </button>
         </form>
       </div>
     )

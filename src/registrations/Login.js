@@ -46,7 +46,9 @@ class Login extends Component {
     .catch( error => console.log('ERROR: ', error) )
   }
 
+
   redirect = () => {
+debugger;
     this.props.history.push('/')
   }
   
@@ -78,7 +80,8 @@ class Login extends Component {
             placeholder="Password"
           /><br />
           <input type="submit" value="Login"/>
-          <div><Link to='/signup'/>Sign Up</div>
+          <br></br>
+          <div><Link to='/signup'>Sign Up</Link></div>
         </form>
       </div>
     )

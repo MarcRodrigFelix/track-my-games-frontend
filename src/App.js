@@ -61,10 +61,10 @@ class App extends Component {
               )}
             />
             <Route exact path='/login' render={ (props) => (
-              <Login {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
+              <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />
               )}/>
             <Route exact path='/signup' render={ (props) => (
-              <Signup {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
+              <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />
               )}/>
           </Switch>
         </BrowserRouter>
