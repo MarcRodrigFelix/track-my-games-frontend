@@ -22,7 +22,7 @@ class Signup extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault()
-    const user = {
+    let user = {
       username: this.state.username,
       email: this.state.email,
       password: this.state.password,
@@ -53,32 +53,32 @@ class Signup extends Component {
       <div>
         <form onSubmit={this.handleOnSubmit}>
           <input 
-          type="text" 
-          name="username" 
-          value={this.state.username}
-          onChange={this.handleOnChange}
-          placeholder="Username"
+            type="text" 
+            name="username" 
+            value={this.state.username}
+            onChange={this.handleOnChange}
+            placeholder="Username"
           /> <br />
           <input 
-          type="text" 
-          name="email" 
-          value={this.state.email} 
-          onChange={this.handleOnChange}
-          placeholder="Email"
+            type="text" 
+            name="email" 
+            value={this.state.email} 
+            onChange={this.handleOnChange}
+            placeholder="Email"
           /><br />
           <input 
-          type="password" 
-          name="password" 
-          value={this.state.password}
-          onChange={this.handleOnChange}
-          placeholder="Password"
+            type="password" 
+            name="password" 
+            value={this.state.password}
+            onChange={this.handleOnChange}
+            placeholder="Password"
           /><br />
           <input 
-          type="password" 
-          name="password_confirmation" 
-          value={this.state.password_confirmation}
-          onChange={this.handleOnChange}
-          placeholder="Confirm Password"
+            type="password" 
+            name="password_confirmation" 
+            value={this.state.password_confirmation}
+            onChange={this.handleOnChange}
+            placeholder="Confirm Password"
           /><br />
           <input type="submit" />
         </form>
