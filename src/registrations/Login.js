@@ -48,7 +48,7 @@ class Login extends Component {
 
 
   redirect = () => {
-debugger;
+// debugger;
     this.props.history.push('/')
   }
   

@@ -35,6 +35,7 @@ class App extends Component {
   }
 
   handleLoginStatus = () => {
+debugger;
     axios.post('http://localhost:3000/logged_in', {
       withCredentials: true
     })

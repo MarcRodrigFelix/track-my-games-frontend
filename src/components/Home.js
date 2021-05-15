@@ -16,6 +16,12 @@ const Home = (props) => {
         .catch( error => console.log(error) )
     }
 
+    const renderLogout = () => {
+        if (props.loggedInStatus === true) {
+            return <Link to="/logout" onClick={handleClick}>Log Out</Link>
+        }
+    }
+    
     return (
         <div>
             <div>
@@ -25,7 +31,7 @@ const Home = (props) => {
             </div>
             <div>
                 {/* if looged in, show Log out link for user */}
-                { props.loggedInStatus ? <Link to="/logout" onClick={handleClick}>Log Out</Link> : null  }
+                { renderLogout() }
             </div>
         </div>
         

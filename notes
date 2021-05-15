@@ -1,0 +1,6 @@
+once user logs in:
+    display user info.
+    display any game info if available.
+    render button/form to add a game to begin tracking.
+    can see list of games that you are playing, want to finish or have finished.
+    (CRUD on games, can Create, Read, Update, Delete any game)
