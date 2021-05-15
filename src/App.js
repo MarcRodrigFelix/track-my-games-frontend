@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
+import Home from './components/Home';
+import Login from './registrations/Login';
+import Signup from './registrations/Home';
 
 
 class App extends Component {
@@ -53,9 +56,9 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <Switch>
-            <Route exact patch='/' />
-            <Route patch='/login' />
-            <Route exact patch='/signup' />
+            <Route exact path='/' />
+            <Route exact path='/login' />
+            <Route exact path='/signup' />
           </Switch>
         </BrowserRouter>
       </div>
