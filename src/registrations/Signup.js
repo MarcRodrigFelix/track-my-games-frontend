@@ -13,6 +13,12 @@ class Signup extends Component {
     }
   }
 
+  handleOnChange = (event) => {
+    event.preventDefault()
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
 
 
   render() {
@@ -22,22 +28,26 @@ class Signup extends Component {
           <input 
           type="text" 
           name="username" 
-          value={this.state.username} 
+          value={this.state.username}
+          onChange={this.handleOnChange}
           />
           <input 
           type="text" 
           name="email" 
           value={this.state.email} 
+          onChange={this.handleOnChange}
           />
           <input 
           type="password" 
           name="password" 
-          value={this.state.password} 
+          value={this.state.password}
+          onChange={this.handleOnChange}
           />
           <input 
           type="password" 
           name="password_confirmation" 
-          value={this.state.password_confirmation} 
+          value={this.state.password_confirmation}
+          onChange={this.handleOnChange}
           />
         </form>
       </div>
