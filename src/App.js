@@ -13,6 +13,10 @@ class App extends Component {
     }
   }
 
+  componentDidMount() {
+    this.handleLoginStatus()
+  }
+
   handleLoginStatus = () => {
     axios.post('http://localhost:3000/logged_in', {
       withCredentials: true
@@ -26,6 +30,8 @@ class App extends Component {
     })
     .catch( error => console.log(error, ": ERROR"))
   }
+
+
 
   render() {
     return (
