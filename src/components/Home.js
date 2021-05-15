@@ -15,10 +15,27 @@ const Home = (props) => {
         .catch( error => console.log(error) )
     }
 
+    const handleStatus = () => {
+        if (props.loggedInStatus){
+            <Link to="/logout" onClick={this.handleClick}>Log Out</Link>
+        } else {
+            return null
+        }
+    }
+
     return (
         <div>
-            
+            <div>
+                <Link to="/login">Log In</Link>
+                <br></br>
+                <Link to="/signup">Sign Up</Link>
+            </div>
+            <div>
+                { handleStatus }
+            </div>
         </div>
+        
+
     )
 }
 
