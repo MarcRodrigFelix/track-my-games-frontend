@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import { BrowserRouter, Switch, Route } from 'react'
+import React, { Component } from 'react';
+import { BrowserRouter, Switch, Route } from 'react';
+import axios from 'axios';
 
 
 class App extends Component {
@@ -11,10 +12,6 @@ class App extends Component {
       user: {}
     }
   }
-
-  
-
-
 
   render() {
     return (
