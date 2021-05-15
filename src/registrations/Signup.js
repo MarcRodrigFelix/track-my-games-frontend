@@ -40,9 +40,12 @@ class Signup extends Component {
         })
       }
     })
-    .catch( error => console.log("ERROR: ", error) )
+    .catch( error => console.log('ERROR: ', error) )
   }
- 
+
+  redirect = () => {
+    this.props.history.push('/')
+  }
   
 
   render() {
