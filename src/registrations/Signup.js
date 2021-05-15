@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { Component } from 'react'
 
 class Signup extends Component {
@@ -14,14 +15,35 @@ class Signup extends Component {
   }
 
   handleOnChange = (event) => {
-    event.preventDefault()
     this.setState({
       [event.target.name]: event.target.value
     })
   }
 
+  handleOnSubmit = (event) => {
+    event.preventDefault()
+    const user = {
+      username: this.state.username,
+      email: this.state.email,
+      password: this.state.password,
+      password_confirmation: this.state.password_confirmation
+    }
 
-
+    axios.post('http://localhost:3000/users', { user }, { withCredentials: true })
+    .then( response => {
+      if (response.data.status === 'created') {
+        this.props.handleLogin(response.data)
+        this.redirect()
+      } else {
+        this.setState({
+          errors: response.data.errors
+        })
+      }
+    })
+    .catch( error => console.log("ERROR: ", error) )
+  }
+ 
+  
 
   render() {
     return (
