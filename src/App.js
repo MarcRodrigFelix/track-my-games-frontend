@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import Home from './components/Home';
 import Login from './registrations/Login';
-import Signup from './registrations/Home';
+import Signup from './registrations/Signup';
 
 
 class App extends Component {
@@ -56,7 +56,10 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <Switch>
-            <Route exact path='/' />
+            <Route exact path='/' render={ (props) => (
+              <Home {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
+              )}
+            />
             <Route exact path='/login' />
             <Route exact path='/signup' />
           </Switch>
