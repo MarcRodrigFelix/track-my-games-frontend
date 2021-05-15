@@ -24,6 +24,13 @@ class App extends Component {
     })
   }
 
+  handleLogout = () => {
+    this.setState({
+      isLoggedIn: false,
+      user: {}
+    })
+  }
+
   handleLoginStatus = () => {
     axios.post('http://localhost:3000/logged_in', {
       withCredentials: true
@@ -41,11 +48,14 @@ class App extends Component {
 
 
   render() {
+
     return (
       <div>
         <BrowserRouter>
           <Switch>
-
+            <Route exact patch='/' />
+            <Route patch='/login' />
+            <Route exact patch='/signup' />
           </Switch>
         </BrowserRouter>
       </div>
