@@ -21,10 +21,12 @@ class Signup extends Component {
   }
 
 
+
+
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.handleOnSubmit}>
           <input 
           type="text" 
           name="username" 
