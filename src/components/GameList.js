@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { getGame } from '../redux/actions/gameActions';
 import { connect } from 'react-redux';
-import { GameItem } from 'GameItem';
+import GameListItem from './GameListItem';
 
 
 class GameList extends Component {
@@ -10,12 +10,19 @@ class GameList extends Component {
     }
 
     render() {
+
+        const games = this.props.game.map( (g, i) => <GameListItem key={i} game={g} />)
+
         return (
             <div>
-                <ul>
-                    <h1>GameList Here.</h1>
-                    {this.props.game.map( g => <GameItem game={g} /> )}
-                </ul>
+                <h1>GameList Here</h1>
+                   {/* {this.props.game.map( (g) => (
+                        <GameListItem 
+                            key={g.id}
+                            title={g.title}
+                        />
+                    ))} */}
+                    {games}
             </div>
         )
     }

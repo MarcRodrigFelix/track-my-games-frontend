@@ -3,7 +3,7 @@ import gameReducer from './reducers/gameReducer';
 import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
-    gameReducer,
+    game: gameReducer,
 });
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE__  || compose;
