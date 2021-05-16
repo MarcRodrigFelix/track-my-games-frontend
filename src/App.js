@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import axios from 'axios';
 import Home from './components/Home';
 import Login from './registrations/Login';
 import Signup from './registrations/Signup';
 
+
+// render user login, signup, signout:
+  // once logged in, games list /games
+  // new game /game/new
+  // view one a game /game/:id
 
 class App extends Component {
   constructor(props) {
@@ -35,7 +40,6 @@ class App extends Component {
   }
 
   handleLoginStatus = () => {
-debugger;
     axios.post('http://localhost:3000/logged_in', {
       withCredentials: true
     })
@@ -55,7 +59,6 @@ debugger;
 
     return (
       <div>
-        <BrowserRouter>
           <Switch>
             <Route exact path='/' render={ (props) => (
               <Home {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
@@ -67,8 +70,9 @@ debugger;
             <Route exact path='/signup' render={ (props) => (
               <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />
               )}/>
+              <Route exact path='/game' component={ GameList } />
+              <Route exact path='/game/new' component={ GameForm } />
           </Switch>
-        </BrowserRouter>
       </div>
     );
   }
