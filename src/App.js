@@ -66,13 +66,13 @@ class App extends Component {
               <Home {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
               )}
             />
+            {/* <Route exact path='/' component={Home} /> */}
             <Route exact path='/login' render={ (props) => (
               <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />
               )}/>
             <Route exact path='/signup' render={ (props) => (
               <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />
               )}/>
-
               <Route exact path='/game' component={ GameList } />
               <Route exact path='/game/new' component={ GameForm } />
           </Switch>

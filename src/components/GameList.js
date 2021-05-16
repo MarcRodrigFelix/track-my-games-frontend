@@ -5,7 +5,7 @@ export default class GameList extends Component {
         return (
             <div>
                 <ul>
-                    GameList Here.
+                    <h1>GameList Here.</h1>
                 </ul>
             </div>
         )
