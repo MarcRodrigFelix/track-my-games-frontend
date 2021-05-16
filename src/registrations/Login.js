@@ -7,6 +7,7 @@ class Login extends Component {
     super(props)
 
     this.state = {
+      id: '',
       username: '',
       email: '',
       password: '',
@@ -35,6 +36,8 @@ class Login extends Component {
     axios.post('http://localhost:3000/login', { user }, { withCredentials: true })
     .then( response => {
       if (response.data.logged_in) {
+// console.log(user)
+// console.log(response.data.user.id)
         this.props.handleLogin(response.data)
         this.redirect()
       } else {
@@ -48,7 +51,6 @@ class Login extends Component {
 
 
   redirect = () => {
-// debugger;
     this.props.history.push('/')
   }
   

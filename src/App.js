@@ -42,7 +42,7 @@ class App extends Component {
   }
 
   handleLoginStatus = () => {
-    axios.post('http://localhost:3000/logged_in', {
+    axios.get('http://localhost:3000/logged_in', {
       withCredentials: true
     })
     .then( response => {

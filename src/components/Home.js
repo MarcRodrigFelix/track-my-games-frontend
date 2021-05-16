@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const Home = (props) => {
 
@@ -21,7 +22,7 @@ const Home = (props) => {
             return <Link to="/logout" onClick={handleClick}>Log Out</Link>
         }
     }
-    
+
     return (
         <div>
             <div>
@@ -40,4 +41,4 @@ const Home = (props) => {
 }
 
 
-export default Home;
+export default connect()(Home);

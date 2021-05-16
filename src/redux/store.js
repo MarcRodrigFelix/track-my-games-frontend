@@ -1,12 +1,12 @@
-import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
+import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import gameReducer from './reducers/gameReducer';
 import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
-    game: gameReducer,
+    gameReducer,
 });
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__  || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE__  || compose;
 
 const store = createStore(
     rootReducer,
