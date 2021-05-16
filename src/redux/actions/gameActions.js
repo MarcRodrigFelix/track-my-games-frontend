@@ -10,7 +10,7 @@ console.log(data)
 }
 
 
-export const createGame = newGameData => {
+export const createNewGame = newGameData => {
     return (dispatch) => {
         fetch('http://localhost:3000/games',{
             method: 'POST',

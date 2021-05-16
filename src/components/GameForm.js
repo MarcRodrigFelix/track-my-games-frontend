@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
+import { createNewGame } from '../redux/actions/gameActions';
+import { connect } from 'react-redux';
 
 class GameForm extends Component {
-    constructor(){
-        super()
-        this.state = {
-            title: '',
-            platform: '',
-            kind: '',
-            is_completed: false,
-        }
+    state = {
+        title: '',
+        platform: '',
+        kind: '',
+        is_completed: false,
     }
 
     handleOnChange = (event) => {
@@ -19,7 +18,7 @@ class GameForm extends Component {
 
     handleOnSubmit = (event) => {
         event.preventDefault()
-
+        this.props.createNewGame(this.state)
     }
 
 
@@ -49,4 +48,4 @@ class GameForm extends Component {
     }
 }
 
-export default GameForm;
+export default connect(null, { createNewGame })(GameForm);
