@@ -16,8 +16,13 @@ class GameForm extends Component {
             [event.target.name]: event.target.value
         })
     }
-   
-    
+
+    handleOnSubmit = (event) => {
+        event.preventDefault()
+
+    }
+
+
 
     render() {
         const { title, kind, platform, is_completed } = this.state
@@ -28,11 +33,16 @@ class GameForm extends Component {
                 <h2>Start Tracking A New Game</h2>
                 <div>
                     <form>
-                        <input type="text"  name="title" value={title} />
-                        <input type="text"  name="platform" value={platform} />
-                        <input type="text"  name="kind" value={kind} />
-                        <input type="radio" name="is_completed" value={is_completed} />
+                        <input type="text"  name="title" value={title} onChange={this.handleOnChange}/>
+                        <input type="text"  name="platform" value={platform} onChange={this.handleOnChange} />
+                        <input type="text"  name="kind" value={kind} onChange={this.handleOnChange} />
+                        {/* <input type="checkbox" name="is_completed" value={is_completed} onChange={this.handleOnChange} defaultChecked={is_completed} /> */}
+                        <button type="submit" >Create</button>
                     </form>
+                    {title}
+                    {platform}
+                    {kind}
+                    {/* {is_completed.toString()} */}
                 </div>
             </div>
         )

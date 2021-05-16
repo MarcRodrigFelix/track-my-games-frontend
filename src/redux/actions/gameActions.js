@@ -8,3 +8,13 @@ console.log(data)
         })
     }
 }
+
+
+export const createGame = newGameData => {
+    return (dispatch) => {
+        fetch('http://localhost:3000/games',{
+            method: 'POST',
+            body: JSON.stringify({ game: newGameData })
+        })
+    }
+}
