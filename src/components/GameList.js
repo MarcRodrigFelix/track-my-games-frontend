@@ -15,14 +15,7 @@ class GameList extends Component {
 
         return (
             <div>
-                <h1>GameList Here</h1>
-                   {/* {this.props.game.map( (g) => (
-                        <GameListItem 
-                            key={g.id}
-                            title={g.title}
-                        />
-                    ))} */}
-                    {games}
+                {games}
             </div>
         )
     }
