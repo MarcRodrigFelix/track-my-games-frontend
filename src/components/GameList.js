@@ -1,6 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import getGame from '../redux/actions/gameActions'
 
-export default class GameList extends Component {
+class GameList extends Component {
     render() {
         return (
             <div>
@@ -11,3 +13,6 @@ export default class GameList extends Component {
         )
     }
 }
+
+
+export default connect()(GameList);
