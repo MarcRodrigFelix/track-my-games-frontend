@@ -1,4 +1,4 @@
-const gameReducer = ( state = [], action ) => {
+export default ( state = [], action ) => {
     switch(action.type) {
         case 'FETCH_GAME_SUCCESS':
             return action.payload;
@@ -7,6 +7,3 @@ const gameReducer = ( state = [], action ) => {
             return state;
     }
 }
-
-
-export default gameReducer;
