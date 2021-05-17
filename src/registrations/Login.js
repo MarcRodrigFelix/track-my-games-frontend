@@ -6,7 +6,7 @@ import { toggleSignup } from '../redux/actions/userActions';
 
 
 const Login = (props) => {
-  
+
   const { signup, toggleSignup } = props
 
   return(
@@ -14,10 +14,22 @@ const Login = (props) => {
       <h2>{ signup ? 'Sign up' : 'Login'}</h2>
       <form>
         <label>
-          Name:
-          <input type="text" name="name" />
+          Username:
+          <input type="text" name="username" />
         </label>
-      <input type="submit" value="Submit" />
+        <br/>
+        <label>
+          Password:
+          <input type="text" name="password" />
+        </label>
+        <br/>
+        { signup && 
+          <label>
+            Confirm Password:
+            <input type="text" name="password_confirmation" />
+          </label>
+        }
+        <input type="submit" value="Submit" />
       </form>
       <br/>
       <br/>
