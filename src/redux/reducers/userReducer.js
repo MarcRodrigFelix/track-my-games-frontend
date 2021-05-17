@@ -21,7 +21,7 @@ const userReducer = (state = initialState, action) => {
                 ...state.loginForm,
             [action.payload.name]: action.payload.value
         }}
-        
+
         default:
             return {...state}
     }
