@@ -92,6 +92,8 @@ console.log(this.props)
             <Route exact path='/signup' render={ (props) => (
               <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} signUpHandler={this.signUpHandler} />
               )}/> */}
+
+              {/* LOAD GAMES FROM USER ID ONLY */}
               <Route exact path='/games' component={ GameList } />
               <Route exact path='/games/new' component={ GameForm } />
           </Switch>
