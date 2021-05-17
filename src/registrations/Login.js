@@ -7,10 +7,10 @@ import { connect } from 'react-redux';
 const Login = (props) => {
 console.log(props)
   const { signup } = props
-  
+
   return(
     <div>
-      <h2>Login Here</h2>
+      <h2>{ signup ? 'Sign up here' : 'Login here'}</h2>
       <form>
         <label>
           Name:
