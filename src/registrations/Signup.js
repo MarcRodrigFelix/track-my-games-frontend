@@ -1,4 +1,4 @@
-import axios from 'axios'
+// import axios from 'axios'
 import React, { Component } from 'react'
 
 class Signup extends Component {
@@ -10,7 +10,7 @@ class Signup extends Component {
       email: '',
       password: '',
       password_confirmation: '',
-      errors: ''
+      // errors: ''
     }
   }
 
@@ -22,37 +22,39 @@ class Signup extends Component {
 
   handleOnSubmit = (event) => {
     event.preventDefault()
-    let user = {
-      username: this.state.username,
-      email: this.state.email,
-      password: this.state.password,
-      password_confirmation: this.state.password_confirmation
-    }
+    // let user = {
+    //   username: this.state.username,
+    //   email: this.state.email,
+    //   password: this.state.password,
+    //   password_confirmation: this.state.password_confirmation
+    // }
 
-    axios.post('http://localhost:3000/users', { user }, { withCredentials: true })
-    .then( response => {
-      if (response.data.status === 'created') {
-        this.props.handleLogin(response.data)
-        this.redirect()
-      } else {
-        this.setState({
-          errors: response.data.errors
-        })
-      }
-    })
-    .catch( error => console.log('ERROR: ', error) )
-  }
-
-  redirect = () => {
+    this.props.signUpHandler(this.state)
     this.props.history.push('/')
+    // axios.post('http://localhost:3000/users', { user }, { withCredentials: true })
+    // .then( response => {
+    //   if (response.data.status === 'created') {
+    //     this.props.handleLogin(response.data)
+    //     this.redirect()
+    //   } else {
+    //     this.setState({
+    //       errors: response.data.errors
+    //     })
+    //   }
+    // })
+    // .catch( error => console.log('ERROR: ', error) )
   }
+
+  // redirect = () => {
+  //   this.props.history.push('/')
+  // }
   
 
   render() {
     return (
       <div>
         <h1>Sign Up</h1>
-        <form onSubmit={this.handleOnSubmit}>
+        {/* <form onSubmit={this.handleOnSubmit}>
           <input 
             type="text" 
             name="username" 
@@ -84,7 +86,7 @@ class Signup extends Component {
           <button type="submit">
             Sign Up
           </button>
-        </form>
+        </form> */}
       </div>
     )
   }

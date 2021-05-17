@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const Home = (props) => {
-console.log(props)
+console.log(props.user)
 
     // axios/fetch for logout from backend
     const handleClick = () => {
@@ -19,7 +19,7 @@ console.log(props)
     }
 
     const renderLogout = () => {
-        if (props.loggedInStatus === true) {
+        if (props.user) {
             return <Link to="/logout" onClick={handleClick}>Log Out</Link>
         }
     }
