@@ -1,1 +1,1 @@
-export const toggleSignup = () => ({type: 'TOGGLE_SINGUP'})
+export const toggleSignup = () => ({type: 'TOGGLE_SIGNUP'})

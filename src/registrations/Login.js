@@ -2,15 +2,16 @@
 // import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { toggleSignup } from '../redux/actions/userActions';
 
 
 const Login = (props) => {
-console.log(props)
-  const { signup } = props
+  
+  const { signup, toggleSignup } = props
 
   return(
     <div>
-      <h2>{ signup ? 'Sign up here' : 'Login here'}</h2>
+      <h2>{ signup ? 'Sign up' : 'Login'}</h2>
       <form>
         <label>
           Name:
@@ -18,6 +19,9 @@ console.log(props)
         </label>
       <input type="submit" value="Submit" />
       </form>
+      <br/>
+      <br/>
+      <button onClick={toggleSignup}> Or you can {signup ? 'Login here' : 'Sign up here'} </button>
     </div>
   )
 }
@@ -26,7 +30,7 @@ const mapStateToProps = (state) => ({
   signup: state.user.signup
 })
 
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps, { toggleSignup })(Login);
 
 
 // class Login extends Component {
