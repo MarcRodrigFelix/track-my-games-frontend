@@ -1,0 +1,1 @@
+export const toggleSignup = () => ({type: 'TOGGLE_SINGUP'})
