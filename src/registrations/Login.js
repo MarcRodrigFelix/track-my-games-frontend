@@ -6,8 +6,9 @@ import { toggleSignup } from '../redux/actions/userActions';
 
 
 const Login = (props) => {
-
-  const { signup, toggleSignup } = props
+console.log(props)
+  const { signup, toggleSignup, form } = props
+  const { username, password, passwordConfirmation } = form
 
   return(
     <div>
@@ -15,18 +16,18 @@ const Login = (props) => {
       <form>
         <label>
           Username:
-          <input type="text" name="username" />
+          <input type="text" name="username" value={username} />
         </label>
         <br/>
         <label>
           Password:
-          <input type="text" name="password" />
+          <input type="text" name="password" value={password} />
         </label>
         <br/>
         { signup && 
           <label>
             Confirm Password:
-            <input type="text" name="password_confirmation" />
+            <input type="text" name="passwordConfirmation" value={passwordConfirmation} />
           </label>
         }
         <input type="submit" value="Submit" />
@@ -39,7 +40,8 @@ const Login = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-  signup: state.user.signup
+  signup: state.user.signup,
+  form: state.user.loginForm
 })
 
 export default connect(mapStateToProps, { toggleSignup })(Login);
