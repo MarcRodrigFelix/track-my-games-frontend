@@ -2,12 +2,12 @@
 // import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { toggleSignup } from '../redux/actions/userActions';
+import { toggleSignup, handleLoginFormChange } from '../redux/actions/userActions';
 
 
 const Login = (props) => {
 console.log(props)
-  const { signup, toggleSignup, form } = props
+  const { signup, toggleSignup, handleLoginFormChange, form } = props
   const { username, password, passwordConfirmation } = form
 
   return(
@@ -16,18 +16,18 @@ console.log(props)
       <form>
         <label>
           Username:
-          <input type="text" name="username" value={username} />
+          <input type="text" name="username" value={username} onChange={handleLoginFormChange} />
         </label>
         <br/>
         <label>
           Password:
-          <input type="text" name="password" value={password} />
+          <input type="text" name="password" value={password} onChange={handleLoginFormChange}/>
         </label>
         <br/>
         { signup && 
           <label>
             Confirm Password:
-            <input type="text" name="passwordConfirmation" value={passwordConfirmation} />
+            <input type="text" name="passwordConfirmation" value={passwordConfirmation} onChange={handleLoginFormChange} />
           </label>
         }
         <input type="submit" value="Submit" />
@@ -44,7 +44,7 @@ const mapStateToProps = (state) => ({
   form: state.user.loginForm
 })
 
-export default connect(mapStateToProps, { toggleSignup })(Login);
+export default connect(mapStateToProps, { toggleSignup, handleLoginFormChange })(Login);
 
 
 // class Login extends Component {
