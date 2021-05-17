@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 
 const Login = (props) => {
 console.log(props)
+  const { signup } = props
+  
   return(
     <div>
       <h2>Login Here</h2>
