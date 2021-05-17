@@ -6,6 +6,7 @@ import Login from './registrations/Login';
 import Signup from './registrations/Signup';
 import GameList from './components/GameList';
 import GameForm from './components/GameForm';
+import UserHome from './components/UserHome';
 
 
 // render user login, signup, signout:
@@ -66,6 +67,7 @@ class App extends Component {
               <Home {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} />
               )}
             />
+            <Route exact path='/user/:id' component={UserHome} />
             {/* <Route exact path='/' component={Home} /> */}
             <Route exact path='/login' render={ (props) => (
               <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const Home = (props) => {
+console.log(props)
 
     // axios/fetch for logout from backend
     const handleClick = () => {
