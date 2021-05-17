@@ -31,7 +31,7 @@ class GameForm extends Component {
             <div>
                 <h2>Start Tracking A New Game</h2>
                 <div>
-                    <form>
+                    <form onSubmit={this.handleOnSubmit} >
                         <input type="text"  name="title" value={title} onChange={this.handleOnChange}/>
                         <input type="text"  name="platform" value={platform} onChange={this.handleOnChange} />
                         <input type="text"  name="kind" value={kind} onChange={this.handleOnChange} />
