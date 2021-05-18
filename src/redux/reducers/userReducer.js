@@ -24,7 +24,7 @@ const userReducer = (state = initialState, action) => {
             [action.payload.name]: action.payload.value
         }};
 
-        case 'CREATE_USER_SUCCESS':
+        case 'SET_CURRENT_USER':
             return { ...state, ...action.payload.user };
 
         default:

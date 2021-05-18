@@ -30,23 +30,9 @@ class App extends Component {
         { this.props.user.id ? 
 
           <Switch>
-            {/* <Route exact path='/' render={ (props) => (
-              <Home {...props} handleLogout={this.handleLogout} loggedInStatus={this.state.isLoggedIn} user={this.state.user} />
-              )}
-            /> */}
-            {/* <Route path='/user' render={() => <UserHome user={this.state.user} /> }/> */}
-
-            {/* <Route exact path='/login' render={ (props) => (
-              <Login {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} />
-              )}/> */}
-            {/* <Route exact path='/signup' render={ (props) => (
-              <Signup {...props} handleLogin={this.handleLogin} loggedInStatus={this.state.isLoggedIn} signUpHandler={this.signUpHandler} />
-              )}/> */}
-
               {/* LOAD GAMES FROM USER ID ONLY */}
             {/* <Route exact path='/games' component={ GameList } /> */}
             <Route path='/games' component={ GameContainer } />
-
               {/* <Route exact path='/games/new' component={ GameForm } /> */}
           </Switch>
           : 

@@ -20,7 +20,7 @@ export const createUserSignup = (userData) => {
         .then( response => {
             localStorage.token = response.token
             disptach({ 
-                type: 'CREATE_USER_SUCCESS',
+                type: 'SET_CURRENT_USER',
                 payload: { user: response.user }
             })
         } )
@@ -42,7 +42,7 @@ export const userLogin = (userData) => {
         .then( response => {
             localStorage.token = response.token
             disptach({ 
-                type: 'CREATE_USER_SUCCESS',
+                type: 'SET_CURRENT_USER',
                 payload: { user: response.user }
             })
         })
@@ -62,7 +62,7 @@ export const autoLogin = () => {
         .then( response => response.json() )
         .then( response => {
             disptach({ 
-                type: 'CREATE_USER_SUCCESS',
+                type: 'SET_CURRNET_USER',
                 payload: { user: response.user }
             })
         })
