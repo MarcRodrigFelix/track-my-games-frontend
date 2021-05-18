@@ -9,7 +9,8 @@ const Login = (props) => {
 console.log(props)
   const { signup, toggleSignup, handleLoginFormChange, form } = props
   const { username, password, passwordConfirmation } = form
-
+console.log(username)
+console.log(form)
   return(
     <div>
       <h2>{ signup ? 'Sign up' : 'Login'}</h2>
