@@ -12,9 +12,9 @@ const Login = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-console.log(event.target)
-console.log(createUserSignup)
-console.log(toggleSignup)
+// console.log(event.target)
+// console.log(createUserSignup)
+// console.log(toggleSignup)
     if (signup) {
       if (password == passwordConfirmation){
         createUserSignup({ username: username, password: password })
