@@ -46,6 +46,25 @@ export const userLogin = (userData) => {
                 payload: { user: response.user }
             })
         })
-        .catch( error => console.log(error))
+    }
+}
+
+
+
+export const autoLogin = () => {
+    return (disptach) => {
+        fetch('http://localhost:3000/autologin', {
+            method: 'POST',
+            headers: {
+                'Authorization': localStorage.token
+            }
+        })
+        .then( response => response.json() )
+        .then( response => {
+            disptach({ 
+                type: 'CREATE_USER_SUCCESS',
+                payload: { user: response.user }
+            })
+        })
     }
 }
