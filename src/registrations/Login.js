@@ -2,19 +2,29 @@
 // import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { toggleSignup, handleLoginFormChange } from '../redux/actions/userActions';
+import { toggleSignup, handleLoginFormChange, createUserSignup } from '../redux/actions/userActions';
 
 
 const Login = (props) => {
-console.log(props)
+
   const { signup, toggleSignup, handleLoginFormChange, form } = props
   const { username, password, passwordConfirmation } = form
-console.log(username)
-console.log(form)
+
+  const handleSubmit = (event) => {
+    e.preventDefault()
+    if (signup) {
+      if (password == passwordConfirmation){
+        createUserSignup({ username: username, password: password })
+      } else {
+        alert("Oh no, your passwords don't match, please try again.")
+      }
+    }
+  }
+
   return(
     <div>
       <h2>{ signup ? 'Sign up' : 'Login'}</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           Username:
           <input type="text" name="username" value={username} onChange={handleLoginFormChange} />
@@ -45,7 +55,7 @@ const mapStateToProps = (state) => ({
   form: state.user.loginForm
 })
 
-export default connect(mapStateToProps, { toggleSignup, handleLoginFormChange })(Login);
+export default connect(mapStateToProps, { toggleSignup, handleLoginFormChange, createUserSignup })(Login);
 
 
 // class Login extends Component {
