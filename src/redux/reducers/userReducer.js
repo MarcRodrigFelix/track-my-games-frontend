@@ -1,3 +1,5 @@
+
+
 const initialLoginForm = {
     username: '',
     password: '',
@@ -25,8 +27,6 @@ const userReducer = (state = initialState, action) => {
         case 'CREATE_USER_SUCCESS':
             return { ...state, ...action.payload.user };
 
-        case 'USER_LOGIN_SUCCESS':
-            return { ...state, ...action.payload.user };
         default:
             return { ...state }
     }

@@ -7,22 +7,23 @@ import { toggleSignup, handleLoginFormChange, createUserSignup, userLogin } from
 
 const Login = (props) => {
 
+  
   const { signup, form, toggleSignup, handleLoginFormChange, createUserSignup, userLogin } = props
   const { username, password, passwordConfirmation } = form
 
   const handleSubmit = (event) => {
     event.preventDefault()
-// console.log(event.target)
-// console.log(createUserSignup)
-// console.log(toggleSignup)
     if (signup) {
       if (password == passwordConfirmation){
         createUserSignup({ username: username, password: password })
       } else {
         alert("Oh no, your passwords don't match, please try again.")
       }
+    } else {
+      userLogin({ username: username, password: password })
     }
   }
+
 
   return(
     <div>

@@ -1,5 +1,8 @@
 const gameReducer = ( state = [], action ) => {
     switch(action.type) {
+        case 'LOAD_GAMES':
+            return [ ...state, action.payload ];
+            
         case 'FETCH_GAME_SUCCESS':
             return action.payload;
 
