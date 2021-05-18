@@ -2,12 +2,12 @@
 // import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { toggleSignup, handleLoginFormChange, createUserSignup } from '../redux/actions/userActions';
+import { toggleSignup, handleLoginFormChange, createUserSignup, userLogin } from '../redux/actions/userActions';
 
 
 const Login = (props) => {
 
-  const { signup, form, toggleSignup, handleLoginFormChange, createUserSignup } = props
+  const { signup, form, toggleSignup, handleLoginFormChange, createUserSignup, userLogin } = props
   const { username, password, passwordConfirmation } = form
 
   const handleSubmit = (event) => {
@@ -58,7 +58,7 @@ const mapStateToProps = (state) => ({
   form: state.user.loginForm
 })
 
-export default connect(mapStateToProps, { toggleSignup, handleLoginFormChange, createUserSignup })(Login);
+export default connect(mapStateToProps, { toggleSignup, handleLoginFormChange, createUserSignup, userLogin })(Login);
 
 
 // class Login extends Component {
