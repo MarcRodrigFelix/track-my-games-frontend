@@ -75,7 +75,7 @@ class App extends Component {
 
   render() {
 // console.log(this.props.user.games)
-console.log(this.props.games)
+// console.log(this.props.games)
 
     return (
       <div>

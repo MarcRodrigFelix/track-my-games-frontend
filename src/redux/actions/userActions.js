@@ -17,10 +17,11 @@ export const createUserSignup = (userData) => {
             body: JSON.stringify(userData)
         })
         .then( response => response.json() )
-        .then( data => {
+        .then( response => {
+            localStorage.token = response.token
             disptach({ 
                 type: 'CREATE_USER_SUCCESS',
-                payload: { user: data.user }
+                payload: { user: response.user }
             })
         } )
     }
@@ -32,16 +33,19 @@ export const userLogin = (userData) => {
         fetch('http://localhost:3000/login', {
             method: 'POST',
             headers: {
+                Accepts: 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(userData)
         })
         .then( response => response.json() )
-        .then( data => {
+        .then( response => {
+            localStorage.token = response.token
             disptach({ 
                 type: 'CREATE_USER_SUCCESS',
-                payload: { user: data.user }
+                payload: { user: response.user }
             })
-        } )
+        })
+        .catch( error => console.log(error))
     }
 }
