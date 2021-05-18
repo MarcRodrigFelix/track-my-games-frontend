@@ -7,7 +7,7 @@ export const handleLoginFormChange = (event) => ({
 
 export const createUserSignup = (userData) => {
     return (disptach) => {
-        fetch('http://localhost:3001/users', {
+        fetch('http://localhost:3000/users', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -7,11 +7,14 @@ import { toggleSignup, handleLoginFormChange, createUserSignup } from '../redux/
 
 const Login = (props) => {
 
-  const { signup, toggleSignup, handleLoginFormChange, form } = props
+  const { signup, form, toggleSignup, handleLoginFormChange, createUserSignup } = props
   const { username, password, passwordConfirmation } = form
 
   const handleSubmit = (event) => {
-    e.preventDefault()
+    event.preventDefault()
+console.log(event.target)
+console.log(createUserSignup)
+console.log(toggleSignup)
     if (signup) {
       if (password == passwordConfirmation){
         createUserSignup({ username: username, password: password })
