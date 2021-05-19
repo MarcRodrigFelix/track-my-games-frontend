@@ -21,7 +21,10 @@ export const createUserSignup = (userData) => {
             localStorage.token = response.token
             dispatch({ 
                 type: 'SET_CURRENT_USER',
-                payload: { user: response.user }
+                payload: { 
+                    user: response.user,
+                    games: response.user.games
+                 }
             })
         } )
     }
@@ -43,8 +46,10 @@ export const userLogin = (userData) => {
             localStorage.token = response.token
             dispatch({ 
                 type: 'SET_CURRENT_USER',
-                payload: { user: response.user,
-                games: response.user.games }
+                payload: { 
+                    user: response.user,
+                    games: response.user.games
+                }
             })
         })
     }
@@ -107,12 +112,9 @@ export const submitNewGame = (gameData) => {
         })
         .then( response => response.json() )
         .then( response => {
-debugger;
-console.log(response)
             dispatch({
                 type: 'TRACK_NEW_GAME',
                 payload: { 
-                    // user: response.user,
                     games: response.user.games
                 }
             })

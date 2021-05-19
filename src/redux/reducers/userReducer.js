@@ -33,10 +33,10 @@ const userReducer = (state = initialState, action) => {
         }};
 
         case 'SET_CURRENT_USER':
-            return { ...state, 
-                ...action.payload.user,
-                games: [...state.games, ...action.payload.games]
-            };
+                return { ...state, 
+                    ...action.payload.user,
+                    games: [...state.games, ...action.payload.games]
+                }
 
         case 'USER_LOGOUT':
             return { ...state, username: null, id: null };
@@ -48,9 +48,10 @@ const userReducer = (state = initialState, action) => {
             }}
 
         case 'TRACK_NEW_GAME':
-            return { ...state, 
-                games: [...state.games, ...action.payload.games]
-            };
+            return { ...state, ...state.user,
+                games: [...state.games, ...action.payload.games],
+                gameForm: initialGameForm
+            }
 
         default:
             return { ...state };

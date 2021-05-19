@@ -2,20 +2,24 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { submitNewGame, handleGameFormChange } from '../redux/actions/userActions';
 ;
-class GameForm extends Component {
+const GameForm = (props) => {
+
+        const handleOnSubmit = (event) => {
+            event.preventDefault()
+            submitNewGame({ title, platform, kind })
+        }
 
 
-
-    render() {
-        const { title, kind, platform, is_completed, submitNewGame, handleGameFormChange } = this.props
-console.log(this.props)
-
+        const { submitNewGame, handleGameFormChange, form } = props
+        const { title, kind, platform, is_completed } = form
+// console.log(this.props)
+// console.log(form)
 
         return (
             <div>
                 <h2>Start Tracking A New Game</h2>
                 <div>
-                    <form onSubmit={submitNewGame} >
+                    <form onSubmit={handleOnSubmit} >
                         <input type="text"  name="title" value={title} onChange={handleGameFormChange} />
                         <br />
                         <input type="text"  name="platform" value={platform}  onChange={handleGameFormChange} />
@@ -27,19 +31,18 @@ console.log(this.props)
                         </label>
                         <br />
                         <button type="submit" >Track Game</button>
-                    {title}
                     </form>
                     <br />
                     <br />
                 </div>
             </div>
         )
-    }
+
 }
 
 const mapStateToProps = (state) => ({
-    user: state.user,
-    gameForm: state.gameForm
+    userId: state.user.id,
+    form: state.user.gameForm
 })
 
 export default connect(mapStateToProps, { submitNewGame, handleGameFormChange })(GameForm);

@@ -8,7 +8,6 @@ const GameContainer = (props) => {
     return (
         <div>
             <h2>This is a game container</h2>
-{console.log(props)}
             <ul>{ props.games.map( game => (
             <li>| {game.title} | {game.platform} | {game.kind} | {game.is_completed ? 'Completed' : 'Not Completed Yet' } |</li>
             ))}</ul>
