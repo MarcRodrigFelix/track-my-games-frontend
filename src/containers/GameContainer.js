@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
+import GameForm from '../components/GameForm'
 
 
 const GameContainer = (props) => {
@@ -11,6 +12,7 @@ const GameContainer = (props) => {
             <ul>{ props.games.map( game => (
             <li>{game.title}</li>
             ))}</ul>
+        < GameForm />
         </div>
     )
 }

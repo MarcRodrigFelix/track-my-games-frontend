@@ -10,10 +10,12 @@ const initialState = {
     id: null,
     username: null,
     signup: false,
-    loginForm: initialLoginForm
+    loginForm: initialLoginForm,
+    // games: []
 }
 
 const userReducer = (state = initialState, action) => {
+// debugger;
     switch(action.type) {
         case 'TOGGLE_SIGNUP':
             return {...state, signup: !state.signup};
@@ -25,11 +27,17 @@ const userReducer = (state = initialState, action) => {
         }};
 
         case 'SET_CURRENT_USER':
-            return { ...state, ...action.payload.user };
+            return { ...state, 
+                ...action.payload.user,
+                // games: [...state.user.games, ...action.payload.games]
+            };
+
+        case 'USER_LOGOUT':
+            return { ...state, username: null, id: null };
 
         default:
-            return { ...state }
+            return { ...state };
     }
-}
+};
 
 export default userReducer;
