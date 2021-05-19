@@ -1,24 +1,24 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
 // import { getGame } from '../redux/actions/gameActions';
 // import { connect } from 'react-redux';
 // import GameListItem from './GameListItem';
 
 
-class GameList extends Component {
-    // componentDidMount() {
-    //     this.props.getGame()
-    // }
+// class GameList extends Component {
+//     componentDidMount() {
+//         this.props.getGame()
+//     }
 
-    render() {
+//     render() {
 
-        // const games = this.props.game.map( (g, i) => <GameListItem key={i} game={g} />)
+//         const games = this.props.game.map( (g, i) => <GameListItem key={i} game={g} />)
 
-        return (
-            <div>
-            </div>
-        )
-    }
-}
+//         return (
+//             <div>
+//             </div>
+//         )
+//     }
+// }
 
 // const mapStateToProps = state => {
 //     return {
@@ -26,5 +26,5 @@ class GameList extends Component {
 //     }
 // }
 
-export default GameList;
+// export default GameList;
 // export default connect(mapStateToProps, { getGame })(GameList);

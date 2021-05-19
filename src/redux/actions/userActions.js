@@ -66,7 +66,7 @@ export const autoLogin = () => {
                 type: 'SET_CURRENT_USER',
                 payload: { 
                     user: response.user,
-                    // games: response.user.games
+                    games: response.user.games
                 }
             })
         })

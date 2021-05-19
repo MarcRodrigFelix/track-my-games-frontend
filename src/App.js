@@ -50,7 +50,7 @@ class App extends Component {
 
 const mapStateToProps = (state) =>( {
   user: state.user,
-  // games: state.user.games
+  games: state.user.games
 })
 
 export default connect(mapStateToProps, { autoLogin, logout })(App);

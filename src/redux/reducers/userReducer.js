@@ -1,4 +1,6 @@
+const initialGameForm = {
 
+}
 
 const initialLoginForm = {
     username: '',
@@ -11,7 +13,8 @@ const initialState = {
     username: null,
     signup: false,
     loginForm: initialLoginForm,
-    // games: []
+    gameForm: initialGameForm,
+    games: []
 }
 
 const userReducer = (state = initialState, action) => {
@@ -29,11 +32,12 @@ const userReducer = (state = initialState, action) => {
         case 'SET_CURRENT_USER':
             return { ...state, 
                 ...action.payload.user,
-                // games: [...state.user.games, ...action.payload.games]
+                games: [...state.games, ...action.payload.games]
             };
 
         case 'USER_LOGOUT':
             return { ...state, username: null, id: null };
+
 
         default:
             return { ...state };
