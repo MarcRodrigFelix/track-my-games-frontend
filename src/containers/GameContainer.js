@@ -12,7 +12,9 @@ const GameContainer = (props) => {
             <ul>{ props.games.map( game => (
             <li>| {game.title} | {game.platform} | {game.kind} | {game.is_completed ? 'Completed' : 'Not Completed Yet' } |</li>
             ))}</ul>
-        <GameForm />
+            {/* <GamesFinished />
+            <GamesNotFinished /> */}
+            <GameForm />
         </div>
     )
 }

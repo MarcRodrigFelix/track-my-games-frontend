@@ -1,5 +1,8 @@
 const initialGameForm = {
-
+    title: '',
+    platform: '',
+    kind: '',
+    is_completed: false
 }
 
 const initialLoginForm = {
@@ -38,6 +41,16 @@ const userReducer = (state = initialState, action) => {
         case 'USER_LOGOUT':
             return { ...state, username: null, id: null };
 
+        case 'GAME_FORM_CHANGE':
+            return { ...state, gameForm: {
+                ...state.gameForm,
+                [action.payload.name]: action.payload.value
+            }}
+
+        case 'TRACK_NEW_GAME':
+            return { ...state, 
+                games: [...state.games, ...action.payload.games]
+            };
 
         default:
             return { ...state };

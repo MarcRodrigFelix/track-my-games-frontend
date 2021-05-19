@@ -85,3 +85,37 @@ export const logout = () => {
             } })
     }
 }
+
+
+// ================================================================== GAME ACTIONS
+
+export const handleGameFormChange = (event) => ({
+    type: 'GAME_FORM_CHANGE',
+    payload: {name: event.target.name, value: event.target.value}
+});
+
+
+export const submitNewGame = (gameData) => {
+    return (dispatch) => {
+        fetch('http://localhost:3000/games', {
+            method: 'POST',
+            headers: {
+                'Authorization': localStorage.token,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify( gameData )
+        })
+        .then( response => response.json() )
+        .then( response => {
+debugger;
+console.log(response)
+            dispatch({
+                type: 'TRACK_NEW_GAME',
+                payload: { 
+                    // user: response.user,
+                    games: response.user.games
+                }
+            })
+        })
+    }
+};

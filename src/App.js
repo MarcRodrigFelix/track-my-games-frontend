@@ -26,7 +26,7 @@ class App extends Component {
     return (
       <div>
         <h2>Track My Games</h2>
-        { this.props.user.id ? 
+        { this.props.user.id ?
         
         <div>
           <Switch>
