@@ -36,7 +36,7 @@ const Login = (props) => {
         <br/>
         <label>
           Password:
-          <input type="text" name="password" value={password} onChange={handleLoginFormChange}/>
+          <input type="password" name="password" value={password} onChange={handleLoginFormChange}/>
         </label>
         <br/>
         { signup && 
