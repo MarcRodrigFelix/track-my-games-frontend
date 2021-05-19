@@ -15,8 +15,6 @@ class GameList extends Component {
 
         return (
             <div>
-                <h2>These are your tracked games so far!</h2>
-                {/* {games} */}
             </div>
         )
     }
