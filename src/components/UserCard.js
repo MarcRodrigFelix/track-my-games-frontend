@@ -7,10 +7,10 @@ export default class UserCard extends Component {
 
     render() {
         const { username, id } = this.props.user
-        
+
         return (
             <div>
-                <p>RENDER</p>
+                <h3>Welcome {username} !!</h3>
             </div>
         )
     }
