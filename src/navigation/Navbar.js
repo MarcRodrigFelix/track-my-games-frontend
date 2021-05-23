@@ -10,6 +10,9 @@ export default function Navbar() {
             <div>
                 <Link to='/newgames'> Track New Game </Link>
             </div>
+            <div>
+                <Link to='/games'> List Of Tracked Games </Link>
+            </div>
             <br />
             <br />
         </div>
