@@ -99,6 +99,10 @@ export const handleGameFormChange = (event) => ({
     payload: {name: event.target.name, value: event.target.value}
 });
 
+// export const toggleCheckboxChange = (checked) => ({
+//     type: 'CHECKBOX_CHANGE',
+//     payload: { is_completed: !!checked } })
+
 
 export const submitNewGame = (gameData) => {
     return (dispatch) => {
@@ -114,7 +118,8 @@ export const submitNewGame = (gameData) => {
         .then( response => {
             dispatch({
                 type: 'TRACK_NEW_GAME',
-                payload: { 
+                payload: {
+                    user: response.user,
                     games: response.user.games
                 }
             })

@@ -7,6 +7,7 @@ const UserContainer = (props) => {
     return (
         <div>
             <UserCard user={props.user} />
+            <UserProfile user={props.user} />
         </div>
     )
 }
