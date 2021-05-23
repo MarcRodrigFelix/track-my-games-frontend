@@ -14,7 +14,7 @@ const Login = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
     if (signup) {
-      if (password == passwordConfirmation){
+      if (password === passwordConfirmation){
         createUserSignup({ username: username, password: password })
       } else {
         alert("Oh no, your passwords don't match, please try again.")

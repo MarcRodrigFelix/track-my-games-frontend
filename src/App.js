@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, NavLink } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Login from './registrations/Login';
 import GameContainer from './containers/GameContainer';

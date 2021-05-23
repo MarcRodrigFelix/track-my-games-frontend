@@ -1,4 +1,3 @@
-import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import Navbar from '../navigation/Navbar';
 import { submitNewGame, handleGameFormChange } from '../redux/actions/userActions';

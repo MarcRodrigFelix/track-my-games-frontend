@@ -5,7 +5,7 @@ export default class UserCard extends Component {
 
 
     render() {
-        const { username, id } = this.props.user
+        // const { username, id } = this.props.user
 
         return (
             <div>
