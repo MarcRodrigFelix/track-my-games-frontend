@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Login from './registrations/Login';
 import GameContainer from './containers/GameContainer';
@@ -32,8 +32,6 @@ class App extends Component {
             <Route exact path='/newgames' component={ GameForm } />
             <Route path='/games' component={ GameContainer } />
             <Route path='/user' component={ UserContainer } />
-
-            {/* <Route exact path='/games/new' component={ GameForm } /> */}
           </Switch>
           <button onClick={this.props.logout}>Logout</button>
         </div>
