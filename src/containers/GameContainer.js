@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import GameForm from '../components/GameForm'
+import Navbar from '../navigation/Navbar';
 
 
 const GameContainer = (props) => {
@@ -13,7 +13,7 @@ const GameContainer = (props) => {
             ))}</ul>
             {/* <GamesFinished />
             <GamesNotFinished /> */}
-            <GameForm />
+            < Navbar />
         </div>
     )
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
+import Navbar from '../navigation/Navbar';
 import { submitNewGame, handleGameFormChange } from '../redux/actions/userActions';
 ;
 const GameForm = (props) => {
@@ -33,6 +34,7 @@ const GameForm = (props) => {
                         <button type="submit" >Track Game</button>
                     </form>
                     <br />
+                    <Navbar />
                     <br />
                 </div>
             </div>
