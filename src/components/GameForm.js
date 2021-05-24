@@ -5,10 +5,13 @@ import { submitNewGame, handleGameFormChange } from '../redux/actions/userAction
 ;
 const GameForm = (props) => {
         // const [ box, setBox ] = useState("false");
+console.log(props)
+        const { submitNewGame, handleGameFormChange, form } = props
+        const { title, kind, platform } = form
 
         const handleOnSubmit = (event) => {
             event.preventDefault()
-            submitNewGame({ title, platform, kind })
+            submitNewGame({ ...props.form, user_id: props.userId })
             window.location.reload()
         }
 
@@ -17,10 +20,6 @@ const GameForm = (props) => {
 // console.log(!box)
 //             toggleCheckboxChange(box)
 //         }
-
-        const { submitNewGame, handleGameFormChange, form } = props
-        const { title, kind, platform } = form
-
 
         return (
             <div>
@@ -56,7 +55,7 @@ const GameForm = (props) => {
 }
 
 const mapStateToProps = (state) => ({
-    // userId: state.user.id,
+    userId: state.user.id,
     form: state.user.gameForm
     // ,is_completed: state.user.gameForm.is_completed
 })
