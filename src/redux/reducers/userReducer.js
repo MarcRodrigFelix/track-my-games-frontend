@@ -2,7 +2,7 @@ const initialGameForm = {
     title: '',
     platform: '',
     kind: '',
-    is_completed: false
+    // is_completed: false
 }
 
 const initialLoginForm = {
@@ -47,17 +47,11 @@ const userReducer = (state = initialState, action) => {
                 [action.payload.name]: action.payload.value
             }}
 
-//         case 'CHECKBOX_CHANGE':
-// debugger;
-// console.log(state.gameForm)
-//             return { ...state, gameForm: {
-//                 ...state.gameForm,
-//                 is_completed: action.payload.is_completed
-//             }}
-
         case 'TRACK_NEW_GAME':
-            return { ...state, ...state.user,
-                games: [...state.games, ...action.payload.games],
+            return { ...state, 
+                games: [
+                    ...state.games, ...action.payload.games
+                ],
                 gameForm: initialGameForm
             }
 

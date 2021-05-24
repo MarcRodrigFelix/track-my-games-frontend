@@ -8,7 +8,8 @@ const GameForm = (props) => {
 
         const handleOnSubmit = (event) => {
             event.preventDefault()
-            submitNewGame({ title, platform, kind, is_completed })
+            submitNewGame({ title, platform, kind })
+            window.location.reload()
         }
 
 //         const checkboxChange = (e) => {
@@ -18,7 +19,7 @@ const GameForm = (props) => {
 //         }
 
         const { submitNewGame, handleGameFormChange, form } = props
-        const { title, kind, platform, is_completed } = form
+        const { title, kind, platform } = form
 
 
         return (

@@ -110,7 +110,8 @@ export const submitNewGame = (gameData) => {
             method: 'POST',
             headers: {
                 'Authorization': localStorage.token,
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                Accepts: 'application/json',
             },
             body: JSON.stringify( gameData )
         })
@@ -119,7 +120,6 @@ export const submitNewGame = (gameData) => {
             dispatch({
                 type: 'TRACK_NEW_GAME',
                 payload: {
-                    user: response.user,
                     games: response.user.games
                 }
             })

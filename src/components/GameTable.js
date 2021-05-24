@@ -6,7 +6,6 @@ export default class GameTable extends Component {
 
         return (
             <div>
-                 {/* {gameEntries.map( (g) => console.log(g[1][1])) } */}
                 <table>
                     <thead>
                         <tr>
@@ -18,7 +17,7 @@ export default class GameTable extends Component {
                     </thead>
                    <tbody>
                             { gameEntries.map( (game) => 
-                            <tr>
+                            <tr key={game[1][1].id}>
                                 <td>{game[1][1].title}</td>
                                 <td>{game[1][1].platform}</td>
                                 <td>{game[1][1].kind}</td>
