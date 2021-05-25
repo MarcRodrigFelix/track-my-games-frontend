@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import Navbar from '../navigation/Navbar';
+import Navbar from '../components/Navbar';
 import GameTable from '../components/GameTable';
 
 

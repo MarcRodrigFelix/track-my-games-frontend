@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 import { connect } from 'react-redux';
-import Navbar from '../navigation/Navbar';
+import Navbar from './Navbar';
 import { submitNewGame, handleGameFormChange } from '../redux/actions/userActions';
 ;
 const GameForm = (props) => {
