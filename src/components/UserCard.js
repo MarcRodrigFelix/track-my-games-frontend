@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from '../navigation/Navbar';
+import Navbar from './Navbar';
 
 export default class UserCard extends Component {
 

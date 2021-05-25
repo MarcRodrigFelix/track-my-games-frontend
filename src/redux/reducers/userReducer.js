@@ -39,7 +39,7 @@ const userReducer = (state = initialState, action) => {
                 };
 
         case 'USER_LOGOUT':
-            return { ...state, username: null, id: null };
+            return { ...state, username: null, id: null, games: [] };
 
         case 'GAME_FORM_CHANGE':
             return { ...state, gameForm: {

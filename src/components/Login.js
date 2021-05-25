@@ -1,6 +1,3 @@
-// import axios from 'axios';
-// import React, { Component } from 'react';
-// import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toggleSignup, handleLoginFormChange, createUserSignup, userLogin } from '../redux/actions/userActions';
 

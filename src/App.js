@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Login from './registrations/Login';
+import Login from './components/Login';
 import GameContainer from './containers/GameContainer';
 import { autoLogin, logout } from './redux/actions/userActions';
 import UserContainer from './containers/UserContainer';
