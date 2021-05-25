@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { deleteGame } from '../redux/actions/userActions';
 
-export default class GameTable extends Component {
+class GameTable extends Component {
     render() {
         const gameEntries = Object.entries(this.props.games).map( game => Object.entries(game))
-
+        // { gameEntries.map( (game) => { return console.log(game[1][1].id) })}
         return (
             <div>
                 <table>
@@ -23,6 +25,9 @@ export default class GameTable extends Component {
                                 <td>{game[1][1].kind}</td>
                                 <td>{game[1][1].is_completed ? 
                                 'Finished' : 'Not Finished'}</td>
+                                <td><button onClick={() => (
+                                    this.props.deleteGame(game[1][1].id)
+                                )}>Delete</button></td>
                             </tr>
                             )}
                    </tbody>
@@ -30,4 +35,7 @@ export default class GameTable extends Component {
             </div>
         )
     }
+
 }
+
+export default connect(null, { deleteGame })(GameTable);

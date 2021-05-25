@@ -126,3 +126,19 @@ export const submitNewGame = (gameData) => {
         })
     }
 };
+
+
+export const deleteGame = (gameId) => {
+        return (dispatch) => {
+            fetch(`http://localhost:3000/games/${gameId}`, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': localStorage.token,
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then( response => {
+                dispatch({ type: 'DELETE_GAME' })
+            })
+        }  
+}

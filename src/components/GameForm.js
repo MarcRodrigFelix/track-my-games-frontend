@@ -57,7 +57,6 @@ console.log(props)
 const mapStateToProps = (state) => ({
     userId: state.user.id,
     form: state.user.gameForm
-    // ,is_completed: state.user.gameForm.is_completed
 })
 
 export default connect(mapStateToProps, { submitNewGame, handleGameFormChange })(GameForm);

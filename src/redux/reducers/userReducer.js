@@ -36,7 +36,7 @@ const userReducer = (state = initialState, action) => {
                 return { ...state, 
                     ...action.payload.user,
                     games: [...state.games, ...action.payload.games]
-                }
+                };
 
         case 'USER_LOGOUT':
             return { ...state, username: null, id: null };
@@ -45,15 +45,19 @@ const userReducer = (state = initialState, action) => {
             return { ...state, gameForm: {
                 ...state.gameForm,
                 [action.payload.name]: action.payload.value
-            }}
+            }};
 
         case 'TRACK_NEW_GAME':
-            return { ...state, 
+            return { 
+                ...state, 
                 games: [
                     ...state.games, ...action.payload.games
                 ],
                 gameForm: initialGameForm
-            }
+            };
+        
+        case 'DELETE_GAME':
+            return { ...state };
 
         default:
             return { ...state };
