@@ -5,14 +5,14 @@ import { submitNewGame, handleGameFormChange } from '../redux/actions/userAction
 ;
 const GameForm = (props) => {
         // const [ box, setBox ] = useState("false");
-console.log(props)
+
         const { submitNewGame, handleGameFormChange, form } = props
         const { title, kind, platform } = form
 
         const handleOnSubmit = (event) => {
             event.preventDefault()
             submitNewGame({ ...props.form, user_id: props.userId })
-            window.location.reload()
+            props.history.push('/games')
         }
 
 //         const checkboxChange = (e) => {
