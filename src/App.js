@@ -6,6 +6,7 @@ import GameContainer from './containers/GameContainer';
 import { autoLogin, logout } from './redux/actions/userActions';
 import UserContainer from './containers/UserContainer';
 import GameForm from './components/GameForm';
+import GamePage from './components/GamePage';
 
 
 // render user login, signup, signout:

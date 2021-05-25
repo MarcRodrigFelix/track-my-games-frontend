@@ -39,7 +39,7 @@ const Login = (props) => {
         { signup && 
           <label>
             Confirm Password:
-            <input type="text" name="passwordConfirmation" value={passwordConfirmation} onChange={handleLoginFormChange} />
+            <input type="password" name="passwordConfirmation" value={passwordConfirmation} onChange={handleLoginFormChange} />
           </label>
         }
         <input type="submit" value="Submit" />
