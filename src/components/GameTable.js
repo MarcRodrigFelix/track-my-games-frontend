@@ -3,9 +3,15 @@ import { connect } from 'react-redux';
 import { deleteGame } from '../redux/actions/userActions';
 
 class GameTable extends Component {
+
     render() {
         const gameEntries = Object.entries(this.props.games).map( game => Object.entries(game))
-        // { gameEntries.map( (game) => { return console.log(game[1][1].id) })}
+
+        const handleOnClick = (gameId) => {
+            this.props.deleteGame(gameId)
+            window.location.reload()
+        }
+
         return (
             <div>
                 <table>
@@ -26,7 +32,7 @@ class GameTable extends Component {
                                 <td>{game[1][1].is_completed ? 
                                 'Finished' : 'Not Finished'}</td>
                                 <td><button onClick={() => (
-                                    this.props.deleteGame(game[1][1].id)
+                                   handleOnClick(game[1][1].id)
                                 )}>Delete</button></td>
                             </tr>
                             )}
