@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteGame } from '../redux/actions/userActions';
+import { Link } from 'react-router-dom';
+import GamePage from './GamePage';
 
 class GameTable extends Component {
+
 
     render() {
         const gameEntries = Object.entries(this.props.games).map( game => Object.entries(game))
@@ -24,20 +27,23 @@ class GameTable extends Component {
                         </tr>
                     </thead>
                    <tbody>
-                            { gameEntries.map( (game) => 
+                            { gameEntries.map( (game) =>
                             <tr key={game[1][1].id}>
                                 <td>{game[1][1].title}</td>
                                 <td>{game[1][1].platform}</td>
                                 <td>{game[1][1].kind}</td>
-                                <td>{game[1][1].is_completed ? 
-                                'Finished' : 'Not Finished'}</td>
+                                <td>{game[1][1].is_completed ? 'Finished' : 'Not Finished'}</td>
                                 <td><button onClick={() => (
                                    handleOnClick(game[1][1].id)
                                 )}>Delete</button></td>
+                                <td>{<GamePage game={game[1][1]}/>}</td>
                             </tr>
                             )}
                    </tbody>
                 </table>
+                <>
+                {/* {gamePage} */}
+                </>
             </div>
         )
     }
