@@ -1,5 +1,11 @@
-* {
+/* * { */
     /* background-color: rgb(170, 99, 117); */
-    align-content: center;
+    /* align-content: center; */
     /* color: white; */
+/* } */
+
+* {
+    max-width: 650px;
+    margin: auto;
+    text-align: center;
 }
