@@ -26,7 +26,7 @@ class GameTable extends Component {
                         </tr>
                     </thead>
                    <tbody>
-                        { gameEntries.map( g => <GameRow game={g[1][1]} /> ) }
+                        { gameEntries.map( g => <GameRow game={g[1][1]} handleOnClick={handleOnClick} /> ) }
                             {/* { gameEntries.map( (game) =>
                             <tr key={game[1][1].id}>
                                 <td>{game[1][1].title}</td>
