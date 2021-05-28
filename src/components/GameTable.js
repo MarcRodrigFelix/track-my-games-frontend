@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteGame } from '../redux/actions/userActions';
 import { Link } from 'react-router-dom';
-import GamePage from './GamePage';
+// import GamePage from './GamePage';
+import GameRow from './GameRow';
 
 class GameTable extends Component {
 
@@ -10,7 +11,7 @@ class GameTable extends Component {
     render() {
         const heading = this.props.heading
         const gameEntries = Object.entries(this.props.games).map( game => Object.entries(game))
-
+        
         const handleOnClick = (gameId) => {
             this.props.deleteGame(gameId)
             window.location.reload()
@@ -25,7 +26,8 @@ class GameTable extends Component {
                         </tr>
                     </thead>
                    <tbody>
-                            { gameEntries.map( (game) =>
+                        { gameEntries.map( g => <GameRow game={g[1][1]} /> ) }
+                            {/* { gameEntries.map( (game) =>
                             <tr key={game[1][1].id}>
                                 <td>{game[1][1].title}</td>
                                 <td>{game[1][1].platform}</td>
@@ -40,12 +42,9 @@ class GameTable extends Component {
                                     </button>
                                 </td>
                             </tr>
-                            )}
+                            )} */}
                    </tbody>
                 </table>
-                <>
-                {/* {gamePage} */}
-                </>
             </div>
         )
     }
