@@ -29,6 +29,7 @@ class App extends Component {
         <div>
           <Switch>
               {/* LOAD GAMES FROM USER ID ONLY */}
+            {/* <Route path='/games/:id' /> */}
             <Route exact path='/newgames' component={ GameForm } />
             <Route path='/games' component={ GameContainer } />
             <Route path='/user' component={ UserContainer } />

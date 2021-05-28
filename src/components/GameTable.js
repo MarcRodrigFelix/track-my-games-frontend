@@ -8,6 +8,7 @@ class GameTable extends Component {
 
 
     render() {
+        const heading = this.props.heading
         const gameEntries = Object.entries(this.props.games).map( game => Object.entries(game))
 
         const handleOnClick = (gameId) => {
@@ -16,14 +17,11 @@ class GameTable extends Component {
         }
 
         return (
-            <div>
+            <div className='main-gametable-wrapper' >
                 <table>
                     <thead>
                         <tr>
-                            <td><strong>Title</strong></td>
-                            <td><strong>Platform</strong></td>
-                            <td><strong>Genre</strong></td>
-                            <td><strong>Completed</strong></td>
+                            { heading.map( head => <th>{head}</th>) }
                         </tr>
                     </thead>
                    <tbody>
@@ -36,7 +34,11 @@ class GameTable extends Component {
                                 <td><button onClick={() => (
                                    handleOnClick(game[1][1].id)
                                 )}>Delete</button></td>
-                                <td>{<GamePage game={game[1][1]}/>}</td>
+                                <td>
+                                    <button>
+                                        { <Link to='/games/:id' component={ GamePage }>Game Page</Link>}
+                                    </button>
+                                </td>
                             </tr>
                             )}
                    </tbody>
