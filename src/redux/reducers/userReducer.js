@@ -61,6 +61,7 @@ const userReducer = (state = initialState, action) => {
             return { ...state };
 
         case 'SET_SELECTED_GAME':
+console.log(action.payload)
             return {
                 ...state,
                 selectedGame: action.payload

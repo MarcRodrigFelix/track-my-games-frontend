@@ -1,3 +1,5 @@
+import { bindActionCreators } from "redux";
+
 export const toggleSignup = () => ({type: 'TOGGLE_SIGNUP'});
 
 
@@ -149,11 +151,11 @@ export const addSelectedGame = (gameId) => {
     return (dispatch) => {
         fetch(`http://localhost:3000/games/${gameId}`)
         .then( response => response.json() )
-        .then( data => {
-console.log(data)
+        .then( game => {
+console.log(game)
             dispatch({
                 type: 'SET_SELECTED_GAME',
-
+                payload: game
             })
         })
         .catch( error => console.log(error) )
