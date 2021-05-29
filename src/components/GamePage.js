@@ -11,11 +11,18 @@ class GamePage extends Component {
 
 
   render() {
-console.log(this.props.selectedGame.id)
+console.log(this.props)
+    const { id, title, platform, kind, completed, user } = this.props.selectedGame
     return (
       <div className="gamepage-wrapper">
         <h3>Game Page</h3>
-
+        <div className="gamepage-div-wrapper">
+          <p>{title}</p>
+          <p>{platform}</p>
+          <p>{kind}</p>
+          <p>{completed}</p>
+        </div>
+        <button onClick={() => (this.props.history.goBack())} >Go Back</button>
       </div>
     )
   }
