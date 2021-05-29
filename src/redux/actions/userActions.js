@@ -142,3 +142,20 @@ export const deleteGame = (gameId) => {
             })
         }  
 }
+
+
+
+export const addSelectedGame = (gameId) => {
+    return (dispatch) => {
+        fetch(`http://localhost:3000/games/${gameId}`)
+        .then( response => response.json() )
+        .then( data => {
+console.log(data)
+            dispatch({
+                type: 'SET_SELECTED_GAME',
+
+            })
+        })
+        .catch( error => console.log(error) )
+    }
+}
