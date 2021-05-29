@@ -1,22 +1,28 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
+import { connect } from 'react-redux';
+import { addSelectedGame } from '../redux/actions/userActions';
 
 
 class GamePage extends Component {
 
   componentDidMount(){
-    console.log(this.props)
+    this.props.addSelectedGame(this.props.match.params.id)
   }
 
 
   render() {
-
+console.log(this.props.selectedGame.id)
     return (
-      <div>
-        <h3>Visit Game Page</h3>
+      <div className="gamepage-wrapper">
+        <h3>Game Page</h3>
+
       </div>
     )
   }
 }
 
-export default GamePage;
+const mapStateToProps = (state) => ({
+  selectedGame: state.user.selectedGame
+})
+
+export default connect( mapStateToProps , { addSelectedGame } )(GamePage);

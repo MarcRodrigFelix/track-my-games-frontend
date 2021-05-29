@@ -1,4 +1,3 @@
-import { bindActionCreators } from "redux";
 
 export const toggleSignup = () => ({type: 'TOGGLE_SIGNUP'});
 
