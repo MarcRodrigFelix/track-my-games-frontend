@@ -6,6 +6,7 @@ import GameContainer from './containers/GameContainer';
 import { autoLogin, logout } from './redux/actions/userActions';
 import UserContainer from './containers/UserContainer';
 import GameForm from './components/GameForm';
+import GamePage from './components/GamePage';
 
 
 // render user login, signup, signout:
@@ -28,8 +29,7 @@ class App extends Component {
         
         <div>
           <Switch>
-              {/* LOAD GAMES FROM USER ID ONLY */}
-            {/* <Route path='/games/:id' /> */}
+            <Route path='/games/:id' component={ GamePage }/>
             <Route exact path='/newgames' component={ GameForm } />
             <Route path='/games' component={ GameContainer } />
             <Route path='/user' component={ UserContainer } />

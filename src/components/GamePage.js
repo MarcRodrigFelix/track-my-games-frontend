@@ -1,9 +1,22 @@
-import React from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-export default function GamePage(props) {
+
+class GamePage extends Component {
+
+  componentDidMount(){
+    console.log(this.props)
+  }
+
+
+  render() {
+
     return (
-        <div>
-          <p>Visit game page</p>  
-        </div>
+      <div>
+        <h3>Visit Game Page</h3>
+      </div>
     )
+  }
 }
+
+export default GamePage;
