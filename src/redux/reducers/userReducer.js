@@ -17,6 +17,7 @@ const initialState = {
     signup: false,
     loginForm: initialLoginForm,
     gameForm: initialGameForm,
+    selectedGame: {},
     games: []
 }
 
@@ -58,6 +59,12 @@ const userReducer = (state = initialState, action) => {
         
         case 'DELETE_GAME':
             return { ...state };
+
+        case 'SET_SELECTED_GAME':
+            return {
+                ...state,
+                selectedGame: action.payload
+            }
 
         default:
             return { ...state };

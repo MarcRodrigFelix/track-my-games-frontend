@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteGame } from '../redux/actions/userActions';
-// import { Link } from 'react-router-dom';
-// import GamePage from './GamePage';
 import GameRow from './GameRow';
 
 class GameTable extends Component {
@@ -27,9 +25,6 @@ class GameTable extends Component {
                     </thead>
                    <tbody>
                         { gameEntries.map( g => <GameRow game={g[1][1]} handleOnClick={handleOnClick} /> ) }
-                        {/* <button>
-                            { <Link to='/games/:id' component={ GamePage }>Game Page</Link>}
-                        </button> */}
                    </tbody>
                 </table>
             </div>
