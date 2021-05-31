@@ -6,7 +6,6 @@ import Button from 'react-bootstrap/Button';
 
 
 const Login = (props) => {
-
   
   const { signup, form, toggleSignup, handleLoginFormChange, createUserSignup, userLogin } = props
   const { username, password, passwordConfirmation } = form
@@ -49,10 +48,10 @@ const Login = (props) => {
             <Form.Control type="password" name="passwordConfirmation" value={passwordConfirmation} onChange={handleLoginFormChange} />
         </Form.Group>
         }
-          <Button type="submit" value="Submit" className="buttons">Submit</Button>
+          <Button type="submit" value="Submit" className="buttons"> {signup ? 'Sign Up' : 'Login'} </Button>
       </Form>
 
-      <Button onClick={toggleSignup} className="buttons"> {signup ? 'Login here' : 'Sign up here'} </Button>
+      <Button onClick={toggleSignup} className="buttons" variant="success"> {signup ? 'Login here' : 'Sign up here'} </Button>
     </div>
   )
 }

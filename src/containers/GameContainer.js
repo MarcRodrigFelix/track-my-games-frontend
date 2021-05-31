@@ -6,7 +6,7 @@ import GameTable from '../components/GameTable';
 
 const GameContainer = (props) => {
 
-    const heading = [ 
+    const headers = [ 
         'Title', 
        ' Platform',
         'Genre',
@@ -18,7 +18,7 @@ const GameContainer = (props) => {
     return (
         <div className="gamecontainer-wrapper">
             <h4>These are all your tracked games so far</h4>
-            < GameTable heading={heading} games={props.games}/>
+            < GameTable headers={headers} games={props.games}/>
             < Navbar />
         </div>
     )

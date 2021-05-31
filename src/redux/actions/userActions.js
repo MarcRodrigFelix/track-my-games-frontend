@@ -97,7 +97,10 @@ export const logout = () => {
 
 export const handleGameFormChange = (event) => ({
     type: 'GAME_FORM_CHANGE',
-    payload: {name: event.target.name, value: event.target.value}
+    payload: {
+        name: event.target.name, 
+        value: event.target.value
+    }
 });
 
 // export const toggleCheckboxChange = (checked) => ({

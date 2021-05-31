@@ -8,7 +8,7 @@ class GameTable extends Component {
 
 
     render() {
-        const heading = this.props.heading
+        const headers = this.props.headers
         const gameEntries = Object.entries(this.props.games).map( game => Object.entries(game))
         
         const handleOnClick = (gameId) => {
@@ -21,7 +21,7 @@ class GameTable extends Component {
                 <Table striped bordered hover >
                     <thead>
                         <tr>
-                            { heading.map( head => <th>{head}</th>) }
+                            { headers.map( head => <th>{head}</th>) }
                         </tr>
                     </thead>
                    <tbody>
