@@ -2,12 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteGame } from '../redux/actions/userActions';
 import GameRow from './GameRow';
+import Table from 'react-bootstrap/Table';
 
 class GameTable extends Component {
-
-    // componentDidMount(){
-    //     window.location.reload()
-    // }
 
 
     render() {
@@ -21,7 +18,7 @@ class GameTable extends Component {
 
         return (
             <div className='main-gametable-wrapper' >
-                <table>
+                <Table striped bordered hover>
                     <thead>
                         <tr>
                             { heading.map( head => <th>{head}</th>) }
@@ -30,7 +27,7 @@ class GameTable extends Component {
                    <tbody>
                         { gameEntries.map( g => <GameRow game={g[1][1]} handleOnClick={handleOnClick} /> ) }
                    </tbody>
-                </table>
+                </Table>
             </div>
         )
     }

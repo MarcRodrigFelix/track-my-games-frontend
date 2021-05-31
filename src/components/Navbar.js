@@ -9,11 +9,11 @@ export default function Navbar() {
     return (
         <div>
             <ButtonGroup>
-                    <Button variant="secondary"><Link to='/' style={{ textDecoration: 'none' }}> Home </Link></Button>
+                    <Button  variant="outline-primary" ><Link to='/' style={{ textDecoration: 'none' }}> Home </Link></Button>
              
-                    <Button variant="secondary"><Link to='/newgames' style={{ textDecoration: 'none' }}> Track New Game </Link></Button>
+                    <Button  variant="outline-primary"><Link to='/newgames' style={{ textDecoration: 'none' }}> Track New Game </Link></Button>
                
-                    <Button variant="secondary"><Link to='/games' style={{ textDecoration: 'none' }}> List Of Tracked Games </Link></Button>
+                    <Button  variant="outline-primary"><Link to='/games' style={{ textDecoration: 'none' }}> List Of Tracked Games </Link></Button>
             </ButtonGroup>
         </div>
     )

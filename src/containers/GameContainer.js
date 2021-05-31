@@ -10,7 +10,9 @@ const GameContainer = (props) => {
         'Title', 
        ' Platform',
         'Genre',
-        'Completed'
+        'Completed',
+        'Delete',
+        'Visit'
     ]
 
     return (
