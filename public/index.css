@@ -44,3 +44,16 @@
 .navbar-wrapper {
     text-decoration: none;
 }
+
+.usercontainer-wrapper {
+    margin: 50px;
+}
+
+.gamecontainer-wrapper {
+    margin-top: 50px;
+    padding: 10px;
+}
+
+.buttons {
+    margin-top: 25px;
+}

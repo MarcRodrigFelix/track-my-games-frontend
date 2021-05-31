@@ -16,8 +16,8 @@ const GameContainer = (props) => {
     ]
 
     return (
-        <div>
-            <h2>These are all your tracked games so far</h2>
+        <div className="gamecontainer-wrapper">
+            <h4>These are all your tracked games so far</h4>
             < GameTable heading={heading} games={props.games}/>
             < Navbar />
         </div>

@@ -28,32 +28,22 @@ class App extends Component {
 
     return (
       <div>
-        <Container>
-          <Row>
-            <Col></Col>
-            <Col xs={6}><h2>Track My Games</h2></Col>
-            <Col></Col>
-          </Row>
+        <h2>Track My Games</h2>
           
           { this.props.user.id ?
           <div>
-          <Row>
-          <Switch>
-              <Route path='/games/:id' component={ GamePage }/>
-              <Route exact path='/newgames' component={ GameForm } />
-              <Route path='/games' component={ GameContainer } />
-              <Route exact path='/' component={ UserContainer } />
-          </Switch>
-          </Row>
-          <Row>
-            <Col><Button onClick={this.props.logout}>Logout</Button></Col>
-          </Row>
+            <Switch>
+                <Route path='/games/:id' component={ GamePage }/>
+                <Route exact path='/newgames' component={ GameForm } />
+                <Route path='/games' component={ GameContainer } />
+                <Route exact path='/' component={ UserContainer } />
+            </Switch>
+           <Button onClick={this.props.logout} className="buttons" >Logout</Button>
           </div>
             : 
             <Login />
             }
 
-        </Container>
       </div>
     );
   }

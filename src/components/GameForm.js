@@ -47,7 +47,7 @@ const GameForm = (props) => {
                             (check box if finshed)
                         </label> */}
                        <br />
-                        <Button type="submit" >Track Game</Button>
+                        <Button type="submit" className="buttons" className="buttons">Track Game</Button>
                     </Form>
                     <br />
                     <Navbar />

@@ -49,10 +49,10 @@ const Login = (props) => {
             <Form.Control type="password" name="passwordConfirmation" value={passwordConfirmation} onChange={handleLoginFormChange} />
         </Form.Group>
         }
-          <Button type="submit" value="Submit">Submit</Button>
+          <Button type="submit" value="Submit" className="buttons">Submit</Button>
       </Form>
 
-      <Button onClick={toggleSignup}> {signup ? 'Login here' : 'Sign up here'} </Button>
+      <Button onClick={toggleSignup} className="buttons"> {signup ? 'Login here' : 'Sign up here'} </Button>
     </div>
   )
 }

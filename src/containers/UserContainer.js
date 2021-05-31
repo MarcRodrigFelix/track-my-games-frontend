@@ -7,8 +7,7 @@ import Navbar from '../components/Navbar';
 
 const UserContainer = (props) => {
     return (
-        <div>
-            <h1>Hello</h1>
+        <div className="usercontainer-wrapper" >
             <UserCard user={props.user} />
             <UserProfile user={props.user} />
             < Navbar />
