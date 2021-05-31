@@ -45,8 +45,8 @@ const GameForm = (props) => {
                         {/* <label>Game Finished:
                             <input type="checkbox" name="is_completed" value={is_completed} onClick={checkboxChange}/> 
                             (check box if finshed)
-                        </label>
-                        {/* <br /> */}
+                        </label> */}
+                       <br />
                         <Button type="submit" >Track Game</Button>
                     </Form>
                     <br />

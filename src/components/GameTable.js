@@ -18,7 +18,7 @@ class GameTable extends Component {
 
         return (
             <div className='main-gametable-wrapper' >
-                <Table striped bordered hover variant='dark' >
+                <Table striped bordered hover >
                     <thead>
                         <tr>
                             { heading.map( head => <th>{head}</th>) }

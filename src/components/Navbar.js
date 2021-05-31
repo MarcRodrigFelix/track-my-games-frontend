@@ -8,6 +8,7 @@ export default function Navbar() {
 
     return (
         <div>
+             <br />
             <ButtonGroup>
                     <Button  variant="outline-primary" ><Link to='/' style={{ textDecoration: 'none' }}> Home </Link></Button>
              
@@ -15,6 +16,7 @@ export default function Navbar() {
                
                     <Button  variant="outline-primary"><Link to='/games' style={{ textDecoration: 'none' }}> List Of Tracked Games </Link></Button>
             </ButtonGroup>
+            <br />
         </div>
     )
 }
