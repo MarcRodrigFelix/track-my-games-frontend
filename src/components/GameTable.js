@@ -1,36 +1,34 @@
-import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteGame } from '../redux/actions/userActions';
 import GameRow from './GameRow';
 import Table from 'react-bootstrap/Table';
 
-class GameTable extends Component {
+const GameTable = (props) => {
 
 
-    render() {
-        const headers = this.props.headers
-        const gameEntries = Object.entries(this.props.games).map( game => Object.entries(game))
-        
         const handleOnClick = (gameId) => {
-            this.props.deleteGame(gameId)
+            props.deleteGame(gameId)
             window.location.reload()
         }
 
+        const headers = props.headers.map( (head, i) => <th key={i} >{head}</th> ) 
+        const games = props.games.map( (game, index ) => <GameRow key={index} game={game} handleOnClick={handleOnClick} /> )
+
         return (
             <div className='main-gametable-wrapper' >
-                <Table striped bordered hover >
+                <Table striped bordered hover>
                     <thead>
                         <tr>
-                            { headers.map( head => <th>{head}</th>) }
+                            { headers }
                         </tr>
                     </thead>
-                   <tbody>
-                        { gameEntries.map( g => <GameRow game={g[1][1]} handleOnClick={handleOnClick} /> ) }
-                   </tbody>
+                    <tbody>
+                        { games }
+                    </tbody>
                 </Table>
             </div>
         )
-    }
+
 
 }
 
