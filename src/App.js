@@ -7,6 +7,8 @@ import { autoLogin, logout } from './redux/actions/userActions';
 import UserContainer from './containers/UserContainer';
 import GameForm from './components/GameForm';
 import GamePage from './components/GamePage';
+import Button from 'react-bootstrap/Button';
+
 
 
 // render user login, signup, signout:
@@ -34,7 +36,7 @@ class App extends Component {
             <Route path='/games' component={ GameContainer } />
             <Route exact path='/' component={ UserContainer } />
           </Switch>
-          <button onClick={this.props.logout}>Logout</button>
+          <Button onClick={this.props.logout}>Logout</Button>
         </div>
           : 
           <Login />
