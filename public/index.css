@@ -6,7 +6,7 @@
 
 * {
     /* max-width: 650px; */
-    margin: 15px auto;
+    margin: 0 auto;
     text-align: center;
     box-sizing: border-box;
     /* background-color: #f8f9fa; */
@@ -14,8 +14,8 @@
 }
 
 .content-wrapper {
-    width: 100%;
-    height: 100%;
+    /* width: 100%;
+    height: 100%; */
     /* background-color: #131d2a; */
 }
 
@@ -41,6 +41,6 @@
     box-shadow: 2px 2px 40px 2px rgba(0,0,0,0.5); */
 }
 
-.buttons {
+.navbar-wrapper {
     text-decoration: none;
 }

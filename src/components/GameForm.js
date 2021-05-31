@@ -2,7 +2,11 @@
 import { connect } from 'react-redux';
 import Navbar from './Navbar';
 import { submitNewGame, handleGameFormChange } from '../redux/actions/userActions';
-;
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
+
+
 const GameForm = (props) => {
         // const [ box, setBox ] = useState("false");
 
@@ -25,26 +29,26 @@ const GameForm = (props) => {
             <div>
                 <h2>Start Tracking A New Game</h2>
                 <div>
-                    <form onSubmit={handleOnSubmit} >
-                        <label>Title:
-                            <input type="text"  name="title" value={title} onChange={handleGameFormChange} />
-                        </label>
-                        <br />
-                        <label>Platform:
-                            <input type="text"  name="platform" value={platform}  onChange={handleGameFormChange} />
-                        </label>
-                        <br />
-                        <label>Type of Game:
-                            <input type="text"  name="kind" value={kind}  onChange={handleGameFormChange} />
-                        </label>
-                        <br />
+                    <Form onSubmit={handleOnSubmit} >
+
+                        <Form.Group controlId="formGameTitle">
+                            <Form.Control type="text"  name="title" value={title} onChange={handleGameFormChange} placeholder="Game Title" />
+                        </Form.Group>
+
+                        <Form.Group controlId="formPlatform">
+                            <Form.Control type="text"  name="platform" value={platform} onChange={handleGameFormChange} placeholder="Platform" />
+                        </Form.Group>
+
+                        <Form.Group controlId="formKind">
+                            <Form.Control type="text"  name="kind" value={kind} onChange={handleGameFormChange} placeholder="Kind" />
+                        </Form.Group>
                         {/* <label>Game Finished:
                             <input type="checkbox" name="is_completed" value={is_completed} onClick={checkboxChange}/> 
                             (check box if finshed)
-                        </label> */}
-                        <br />
-                        <button type="submit" >Track Game</button>
-                    </form>
+                        </label>
+                        {/* <br /> */}
+                        <Button type="submit" >Track Game</Button>
+                    </Form>
                     <br />
                     <Navbar />
                     <br />
