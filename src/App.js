@@ -8,9 +8,6 @@ import UserContainer from './containers/UserContainer';
 import GameForm from './components/GameForm';
 import GamePage from './components/GamePage';
 import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 
 // render user login, signup, signout:
@@ -38,7 +35,7 @@ class App extends Component {
                 <Route path='/games' component={ GameContainer } />
                 <Route exact path='/' component={ UserContainer } />
             </Switch>
-           <Button onClick={this.props.logout} className="buttons" >Logout</Button>
+           <Button onClick={this.props.logout} className="buttons" variant="warning" >Logout</Button>
           </div>
             : 
             <Login />

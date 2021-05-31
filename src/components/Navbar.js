@@ -4,7 +4,7 @@ import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import Button from 'react-bootstrap/Button';
 
 
-export default function Navbar() {
+const Navbar = () => {
 
     return (
         <div>
@@ -20,3 +20,5 @@ export default function Navbar() {
         </div>
     )
 }
+
+export default Navbar;

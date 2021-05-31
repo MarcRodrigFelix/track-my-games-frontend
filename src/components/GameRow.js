@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 // import GamePage from './GamePage';
-import { addSelectedGame } from '../redux/actions/userActions';
-import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 
 

@@ -54,6 +54,10 @@
     padding: 10px;
 }
 
+.gameform-wrapper {
+    margin: 50px;
+}
+
 .buttons {
     margin-top: 25px;
 }

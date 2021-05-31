@@ -26,8 +26,8 @@ const GameForm = (props) => {
 //         }
 
         return (
-            <div>
-                <h2>Start Tracking A New Game</h2>
+            <div className="gameform-wrapper" >
+                <h4>Start Tracking A New Game</h4>
                 <div>
                     <Form onSubmit={handleOnSubmit} >
 
@@ -47,7 +47,7 @@ const GameForm = (props) => {
                             (check box if finshed)
                         </label> */}
                        <br />
-                        <Button type="submit" className="buttons" className="buttons">Track Game</Button>
+                        <Button type="submit" className="buttons">Track Game</Button>
                     </Form>
                     <br />
                     <Navbar />
