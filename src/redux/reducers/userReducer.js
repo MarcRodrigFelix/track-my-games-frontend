@@ -2,7 +2,7 @@ const initialGameForm = {
     title: '',
     platform: '',
     kind: '',
-    // is_completed: false
+    is_completed: false
 }
 
 const initialLoginForm = {
@@ -61,11 +61,17 @@ const userReducer = (state = initialState, action) => {
             return { ...state };
 
         case 'SET_SELECTED_GAME':
-console.log(action.payload)
             return {
                 ...state,
                 selectedGame: action.payload
             }
+
+//         case 'CHECKBOX_TOGGLE':
+// console.log(action.payload)
+//             return {
+//                 ...state,
+//                 isCompleted: action.payload
+//             }
 
         default:
             return { ...state };

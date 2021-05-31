@@ -101,8 +101,9 @@ export const handleGameFormChange = (event) => ({
 });
 
 // export const toggleCheckboxChange = (checked) => ({
-//     type: 'CHECKBOX_CHANGE',
-//     payload: { is_completed: !!checked } })
+//     type: 'CHECKBOX_TOGGLE',
+//     payload: { isCompleted: !!checked }
+// })
 
 
 export const submitNewGame = (gameData) => {

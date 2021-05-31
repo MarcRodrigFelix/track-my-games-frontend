@@ -5,6 +5,10 @@ import GameRow from './GameRow';
 
 class GameTable extends Component {
 
+    // componentDidMount(){
+    //     window.location.reload()
+    // }
+
 
     render() {
         const heading = this.props.heading
