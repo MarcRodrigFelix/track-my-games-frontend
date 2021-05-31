@@ -1,5 +1,8 @@
 import { connect } from 'react-redux';
 import { toggleSignup, handleLoginFormChange, createUserSignup, userLogin } from '../redux/actions/userActions';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
 
 
 const Login = (props) => {
@@ -25,28 +28,31 @@ const Login = (props) => {
   return(
     <div>
       <h2>{ signup ? 'Sign up' : 'Login'}</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input type="text" name="username" value={username} onChange={handleLoginFormChange} />
-        </label>
-        <br/>
-        <label>
-          Password:
-          <input type="password" name="password" value={password} onChange={handleLoginFormChange}/>
-        </label>
-        <br/>
+      <Form onSubmit={handleSubmit}>
+
+        <Form.Group controlId="formUserName">
+          <Form.Label>Username</Form.Label>
+          <Form.Control type="text" name="username" value={username} onChange={handleLoginFormChange} />
+          <Form.Text className="text-muted">
+           Enter your unique username to continue.
+          </Form.Text>
+        </Form.Group>
+
+        <Form.Group controlId="formBasicPassword">
+          <Form.Label>Password</Form.Label>
+            <Form.Control type="password" name="password" value={password} onChange={handleLoginFormChange}/>
+        </Form.Group>
+
         { signup && 
-          <label>
-            Confirm Password:
-            <input type="password" name="passwordConfirmation" value={passwordConfirmation} onChange={handleLoginFormChange} />
-          </label>
+        <Form.Group controlId="formConfirmPassword">
+          <Form.Label>Confirm Password</Form.Label>
+            <Form.Control type="password" name="passwordConfirmation" value={passwordConfirmation} onChange={handleLoginFormChange} />
+        </Form.Group>
         }
-        <input type="submit" value="Submit" />
-      </form>
-      <br/>
-      <br/>
-      <button onClick={toggleSignup}> Or you can {signup ? 'Login here' : 'Sign up here'} </button>
+          <Button type="submit" value="Submit">Submit</Button>
+      </Form>
+
+      <Button onClick={toggleSignup}> {signup ? 'Login here' : 'Sign up here'} </Button>
     </div>
   )
 }
@@ -57,93 +63,3 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps, { toggleSignup, handleLoginFormChange, createUserSignup, userLogin })(Login);
-
-
-// class Login extends Component {
-//   constructor(props) {
-//     super(props)
-
-//     this.state = {
-//       id: '',
-//       username: '',
-//       email: '',
-//       password: '',
-//       errors: ''
-//     }
-//   }
-
-//   componentDidMount() {
-//       return this.props.loggedInStatus ? this.redirect() : null
-//   }
-
-//   handleOnChange = (event) => {
-//     this.setState({
-//       [event.target.name]: event.target.value
-//     })
-//   }
-
-//   handleOnSubmit = (event) => {
-//     event.preventDefault()
-//     let user = {
-//       username: this.state.username,
-//       email: this.state.email,
-//       password: this.state.password
-//     }
-
-//     axios.post('http://localhost:3000/login', { user }, { withCredentials: true })
-//     .then( response => {
-//       if (response.data.logged_in) {
-// // console.log(user)
-// // console.log(response.data.user.id)
-//         this.props.handleLogin(response.data)
-//         this.redirect()
-//       } else {
-//         this.setState({
-//           errors: response.data.errors
-//         })
-//       }
-//     })
-//     .catch( error => console.log('ERROR: ', error) )
-//   }
-
-
-//   redirect = () => {
-//     this.props.history.push('/')
-//   }
-  
-
-//   render() {
-//     return (
-//       <div>
-//         <h1>Log In</h1>
-//         <form onSubmit={this.handleOnSubmit}>
-//           <input 
-//             type="text" 
-//             name="username" 
-//             value={this.state.username}
-//             onChange={this.handleOnChange}
-//             placeholder="Username"
-//           /> <br />
-//           <input 
-//             type="text" 
-//             name="email" 
-//             value={this.state.email} 
-//             onChange={this.handleOnChange}
-//             placeholder="Email"
-//           /><br />
-//           <input 
-//             type="password" 
-//             name="password" 
-//             value={this.state.password}
-//             onChange={this.handleOnChange}
-//             placeholder="Password"
-//           /><br />
-//           <input type="submit" value="Login"/>
-//           <br></br>
-//           <div><Link to='/signup'>Sign Up</Link></div>
-//         </form>
-//       </div>
-//     )
-//   }
-// }
-// export default Login;
