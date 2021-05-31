@@ -2,6 +2,7 @@
 import { connect } from 'react-redux';
 import UserCard from '../components/UserCard'
 import UserProfile from '../components/UserProfile'
+import Navbar from '../components/Navbar';
 
 
 const UserContainer = (props) => {
@@ -10,6 +11,7 @@ const UserContainer = (props) => {
             <h1>Hello</h1>
             <UserCard user={props.user} />
             <UserProfile user={props.user} />
+            < Navbar />
         </div>
     )
 }
