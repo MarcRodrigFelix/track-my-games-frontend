@@ -32,7 +32,7 @@ class App extends Component {
             <Route path='/games/:id' component={ GamePage }/>
             <Route exact path='/newgames' component={ GameForm } />
             <Route path='/games' component={ GameContainer } />
-            <Route path='/user' component={ UserContainer } />
+            <Route exact path='/' component={ UserContainer } />
           </Switch>
           <button onClick={this.props.logout}>Logout</button>
         </div>
